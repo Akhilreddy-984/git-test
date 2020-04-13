@@ -28,3 +28,18 @@
     color: #0f0f0f;
 
 }
+body{
+    padding:50px 0px 0px 0px;/*always provide padding when using fixed top navbar so that this 50px is used by navbar */
+    z-index: 0; 
+    /*
+    what is z-index? 
+    An element with greater stack order is always in front of an element with a lower stack order. 
+    Note: z-index only works on positioned elements 
+    (position: absolute, position: relative, position: fixed, or position: sticky).
+    */
+}
+.navbar-dark
+{
+    background-color: #512DAB;
+
+}
