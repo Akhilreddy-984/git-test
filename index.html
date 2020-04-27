@@ -29,9 +29,9 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span>Login
-                    </a>
+                    
+                        <a id="mylogin"><span class="fa fa-sign-in"></span>Login</a>
+                    
                 </span>
 
             </div>
@@ -45,7 +45,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login</h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="modalclose">
                         &times;
                     </button>
                 </div>
@@ -63,13 +63,13 @@
                             <div class="col-sm-auto">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox">
-                                    <label class="form-check-label"> Remember me
+                                    <label class="form-check-label"> <b>Remember me</b>
                                     </label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary btn-sm ml-auto" id="modalclosecancel">Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -97,8 +97,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center ">
-                    <a  class="btn btn-warning btn-block btn-lg" role="button" 
-                    data-toggle="modal" data-target="#ReserveModal"
+                    <a  id="myreserve" class="btn btn-warning btn-block btn-lg" role="button" 
                     href="#bottom"><b>Reserve Table</b></a>
                 </div>
             </div>
@@ -308,7 +307,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title"><b>Reserve a Table</b></h4>
-                    <button type="button" class="close" data-dismiss="modal">
+                    <button type="button" class="close" id="modalclosereserve">
                         &times;
                     </button>
                 </div>
@@ -375,7 +374,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="offset-sm-2 col-sm-10">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary" id="reservecancel">Cancel</button>
                                 <button type="submit" class="btn btn-primary">Resereve</button>
                             </div>
                         </div>
@@ -440,11 +439,35 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
+    <script>
+        $("#mylogin").click(function(){
+            $('#loginModal').modal('toggle')
+
+            $('#loginModal').modal('show');
+
+            $("#modalclose").click(function(){
+                $('#loginModal').modal('hide');                 
+            });
+            $("#modalclosecancel").click(function(){
+                $('#loginModal').modal('hide');                 
+            });
         });
-    </script> -->
+
+
+        $("#myreserve").click(function(){
+            $('#ReserveModal').modal('toggle')
+
+            $('#ReserveModal').modal('show');
+
+            $("#modalclosereserve").click(function(){
+                $('#ReserveModal').modal('hide');                 
+            });
+            $("#reservecancel").click(function(){
+                $('#ReserveModal').modal('hide');                 
+            });
+        });
+        // 
+    </script>
     <script>
         $(document).ready(function(){
             $("#mycarousel").carousel( { interval: 2000 } );
